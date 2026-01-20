@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Message Hider</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>🖼️ Image Message Hider</h1>
+    <p class="subtitle">Securely embed and extract secret text from images</p>
+    <div class="section">
+        <h2>🔒 Embed Message</h2>
+        <div class="input-group">
+            <label>Select Image</label>
+            <input type="file" id="imgInput" accept="image/*">
+        </div>
+        <div class="input-group">
+            <label>Message to Hide</label>
+            <textarea id="msgInput" rows="4" placeholder="Type confidential text..."></textarea>
+        </div>
+        <button class="btn btn-primary" onclick="embedText()">Embed Text</button>
+        <div class="output">
+            <div class="preview-wrapper">
+                <canvas id="previewCanvas"></canvas>
+            </div>
+
+            <button class="btn btn-success" id="saveBtn" onclick="saveImage()" style="display:none">
+                Save Image
+            </button>
+        </div>
+    </div>
+    <div class="section">
+        <h2>🔓 Extract Message</h2>
+
+        <div class="input-group">
+            <label>Upload Encoded Image</label>
+            <input type="file" id="decodeInput" accept="image/*">
+        </div>
+
+        <button class="btn btn-primary" onclick="extractText()">Extract Text</button>
+
+        <div class="output">
+            <div id="outputText" class="decoded-box"></div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
